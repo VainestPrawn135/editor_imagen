@@ -31,7 +31,7 @@ while codigo_r <= 255:
         codigo_g+=1
     codigo_r+=1
 
-codigo = 200
+codigo = 100
 while codigo <= 255:
     for x in range(0, width):
         for y in range(0, height):
