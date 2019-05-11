@@ -1,7 +1,7 @@
 from PIL import Image
 
-img = Image.open("../logosinfondo/blastfury-rojo.png")
-#convertimos a escala de RGBA
+img = Image.open("../logoconfondo/blastfury-rojo.png")
+#convertimos a escala de RGB, RGBA, L, HSV
 if img.mode != 'RGBA':
     img = img.convert('RGBA')
 datos = list(img.getdata()) # obtenemos los códigos de colores de cada píxel
@@ -11,34 +11,36 @@ width = img.size[0]
 height = img.size[1]
 #print(width)
 #print(height)
-pixeles = img.load()
+
+pixel = img.load()
 
 #obtenemos todos los demás colores que no son los del fondo de la imagen
-"""for x in range(1, width):
-    for y in range(1, height):
-        if pixeles[x,y] != (247, 247, 247, 255):
-            print(pixeles[x,y])"""
+"""for x in range(0, width):
+    for y in range(0, height):
+        if pixel[x,y] != (247, 247, 247, 255):
+            print(pixel[x,y])"""
 
-codigo_r = codigo_g = codigo_b = 100
-while codigo_r <= 255:
-    while codigo_g <= 255:
-        while codigo_b <= 255:
+r = g = b = 247
+blanco = 255
+while r <= blanco:
+    while g <= blanco:
+        while b <= blanco:
             for x in range(0, width):
                 for y in range(0, height):
-                    if pixeles[x, y] == (codigo_r, codigo_g, codigo_b, 255):
-                        pixeles[x, y] = (0, 0, 0, 0)
-            codigo_b+=1
-        codigo_g+=1
-    codigo_r+=1
+                    if pixel[x, y] == (r, g, b, 255):
+                        pixel[x, y] = (0, 0, 0, 0)
+            b+=1
+        g+=1
+    r+=1
 
-codigo = 100
-while codigo <= 255:
+"""codigo = 240
+while codigo <= blanco:
     for x in range(0, width):
         for y in range(0, height):
-            if pixeles[x, y] == (codigo, codigo, codigo, 255):
-                pixeles[x, y] = (0, 0, 0, 0)
-    codigo+=1
+            if pixel[x, y] == (codigo, codigo, codigo, 255):
+                pixel[x, y] = (0, 0, 0, 0)
+    codigo+=1"""
 
 #acabamos de eliminar el fondo
 img.show()
-img.save("../logosinfondo/prueba.png")
+img.save("../logosinfondo/blastfury-rojo.png")
