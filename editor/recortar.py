@@ -24,12 +24,12 @@ print("Escala de la imagen de salida:" ,img.mode)
             print(pixel[x,y])"""
 
 #obtenemos todos los demás colores que son los del fondo de la imagen y los hacemos transparentes
-"""for x in range(0, width):
+for x in range(0, width):
     for y in range(0, height):
-        if pixel[x,y] == (254, 254, 254, 255):
-            pixel[x,y] = (0, 0, 0, 0)"""
+        if pixel[x,y] == (255, 254, 255, 255):
+            pixel[x,y] = (0, 0, 0, 0)
 
-r = g = b = 250
+r = g = b = a = 240
 a = 255
 while r < a:
     while g < a:

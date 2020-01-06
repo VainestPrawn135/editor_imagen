@@ -1,6 +1,6 @@
 from PIL import Image
 
-img = Image.open("editor_imagen/20julio/editor/logosinfondo/blastfury-amarillo.png")
+img = Image.open("../21marzo2020/logosinfondo/blastfury-rojo.png")
 #convertimos a escala de RGB, RGBA, L, HSV
 if img.mode != 'RGBA':
     img = img.convert('RGBA')
@@ -17,7 +17,7 @@ archivo = open("pixeles.txt", "w")
 for x in range(0, width):
     for y in range(0, height):
         if pixel[x, y] != (0, 0, 0, 255) and pixel[x, y] != (0, 0, 0, 0):
-            archivo.write(" ".join(pixel[x, y].__str__()))
+            archivo.write("".join(pixel[x, y].__str__()))
 
 archivo.close()
 
