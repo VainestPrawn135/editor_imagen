@@ -1,6 +1,6 @@
 from PIL import Image
 
-img = Image.open("../21marzo2020/logosinfondo/Brutal_Crisis.png")
+img = Image.open("../21marzo2020/logoconfondo/Brutal_Crisis.png")
 #convertimos a escala de RGB, RGBA, L, HSV
 if img.mode != 'RGBA':
     img = img.convert('RGBA')
@@ -10,6 +10,7 @@ height = img.size[1]
 
 print(width)
 print(height)
+print("Recortando sobrante")
 
 pixel = img.load()
 
@@ -19,23 +20,26 @@ pixel = img.load()
         if pixel[x, y] == (2, 2, 2, 255):
             pixel[x, y] == (0, 0, 0, 0)"""
 
-"""r = g = b = 224
+r = g = b = 200
 a = 255
 while r < a:
     while g < a:
         while b < a:
             for x in range(0, width):
                 for y in range(0, height):
-                    if pixel[x, y] == (r, g, b, a):
+                    if pixel[x, y] >= (r, g, b, a):
                         pixel[x, y] = (0, 0, 0, 0)
             b+=1
         g+=1
-    r+=1"""
+    r+=1
 
-for x in range(0, width):
-    for y in range(0, height):
-        if pixel[x, y] != (249, 249, 249, 255):
-            pixel[x, y] == (0, 0, 0, 0)
+"""a=255
+while a >=0:
+    for x in range(0, width):
+        for y in range(0, height):
+            if pixel[x, y] >= (255, 255, 253, a):
+                pixel[x, y] == (0, 0, 0, 0)
+    a-=1"""
 
 #acabamos de eliminar el sobrante
 img.show()
