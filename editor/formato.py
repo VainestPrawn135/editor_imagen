@@ -1,8 +1,8 @@
 from PIL import Image
 #Abrimos la imagen original
-img = Image.open("../21marzo2020/logoconfondo/Brutal_Crisis.jpg")
+img = Image.open("../21marzo2020/logoconfondo/blastfury-blanco.jpg")
 #La guardamos en formato PNG para su procesamiento
 if img.format != 'PNG':
-    img.save("../21marzo2020/logoconfondo/Brutal_Crisis.png")
+    img.save("../21marzo2020/logoconfondo/blastfury-blanco.png")
     img.show()
     print("Imagen guardada con formato PNG")
