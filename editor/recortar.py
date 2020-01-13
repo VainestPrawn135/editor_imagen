@@ -1,6 +1,6 @@
 from PIL import Image
 
-img = Image.open("../21marzo2020/logoconfondo/Diabolous.png")
+img = Image.open("../7marzo20/logoconfondo/Eye_Of_Destruction.png")
 #convertimos a escala de RGB, RGBA, L, HSV
 print("Escala de la imagen de entrada:", img.mode)
 
@@ -44,7 +44,7 @@ while r < a:
 
 codigo = 0
 a = 255
-while codigo < 20:
+while codigo < 3:
     for x in range(0, width):
         for y in range(0, height):
             if pixel[x, y] <= (codigo, codigo, codigo, a):
@@ -53,4 +53,4 @@ while codigo < 20:
 
 #acabamos de eliminar el fondo
 img.show()
-img.save("../21marzo2020/logosinfondo/Diabolous.png")
+img.save("../7marzo20/logosinfondo/Eye_Of_Destruction.png")
