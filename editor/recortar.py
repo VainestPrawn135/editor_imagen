@@ -1,6 +1,6 @@
 from PIL import Image
 
-img = Image.open("../7marzo20/logoconfondo/Eye_Of_Destruction.png")
+img = Image.open("../7marzo20/logoconfondo/Demolition.png")
 #convertimos a escala de RGB, RGBA, L, HSV
 print("Escala de la imagen de entrada:", img.mode)
 
@@ -29,7 +29,7 @@ print("Escala de la imagen de salida:" ,img.mode)
         if pixel[x,y] == (255, 254, 255, 255):
             pixel[x,y] = (0, 0, 0, 0)"""
 
-"""r = g = b = 247
+r = g = b = 247
 a = 255
 while r < a:
     while g < a:
@@ -40,17 +40,17 @@ while r < a:
                         pixel[x, y] = (0, 0, 0, 0)
             b+=1
         g+=1
-    r+=1"""
+    r+=1
 
-codigo = 0
+"""codigo = 0
 a = 255
 while codigo < 3:
     for x in range(0, width):
         for y in range(0, height):
             if pixel[x, y] <= (codigo, codigo, codigo, a):
                 pixel[x, y] = (0, 0, 0, 0)
-    codigo+=1
+    codigo+=1"""
 
 #acabamos de eliminar el fondo
 img.show()
-img.save("../7marzo20/logosinfondo/Eye_Of_Destruction.png")
+img.save("../7marzo20/logosinfondo/Demolition.png")

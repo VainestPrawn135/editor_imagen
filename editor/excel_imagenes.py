@@ -1,7 +1,7 @@
 from openpyxl import Workbook
 from PIL import Image
 
-img = Image.open("../21marzo2020/logoconfondo/blastfury-blanco.png")
+img = Image.open("../7marzo20/logoconfondo/Demolition.png")
 #convertimos a escala de RGB, RGBA, L, HSV
 if img.mode != 'RGBA':
     img = img.convert('RGBA')
