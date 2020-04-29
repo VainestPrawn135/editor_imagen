@@ -1,7 +1,7 @@
 from openpyxl import Workbook
 from PIL import Image
 
-img = Image.open("../7marzo20/logoconfondo/Demolition.png")
+img = Image.open("../7marzo20/logosinfondo/Demolition.png")
 #convertimos a escala de RGB, RGBA, L, HSV
 if img.mode != 'RGBA':
     img = img.convert('RGBA')
@@ -10,7 +10,7 @@ width = img.size[0]
 height = img.size[1]
 
 wb = Workbook()
-ruta = 'datos.xlsx'
+ruta = '../editor/datos.xlsx'
 
 hoja = wb.active
 hoja.title = "Pixeles_Imagen"
